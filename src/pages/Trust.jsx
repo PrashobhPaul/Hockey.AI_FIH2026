@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useLiveQuery } from 'dexie-react-hooks'
 import { db } from '../db'
-import { oracleRecord } from '../engine/prediction'
+import { oracleRecord, replayIndex } from '../engine/prediction'
 
 function Section({ title, children }) {
   return (
@@ -20,7 +20,7 @@ function ModelAccuracy() {
   const matches = useLiveQuery(() => db.matches.toArray(), [], [])
   const predictions = useLiveQuery(() => db.predictions.toArray(), [], [])
   const calibration = useLiveQuery(() => db.meta.get('calibration'), [])
-  const fallback = oracleRecord(matches, predictions)
+  const fallback = oracleRecord(matches, predictions, replayIndex(calibration))
   const correct = calibration?.correct ?? fallback.correct
   const total = calibration?.matches ?? fallback.graded
   const pct = calibration?.accuracy_pct ?? fallback.accuracyPct

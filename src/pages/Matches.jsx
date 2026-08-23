@@ -5,7 +5,7 @@ import { useLiveQuery } from 'dexie-react-hooks'
 import { db } from '../db'
 import MatchCard, { formatDate } from '../components/MatchCard'
 import { Skeleton } from '../components/shared'
-import { oracleRecord } from '../engine/prediction'
+import { oracleRecord, replayIndex } from '../engine/prediction'
 import { effectiveStatus } from '../engine/clock'
 import { useNowTick } from '../hooks/useNowTick'
 import { SIM_ID, SIM_MATCH } from '../content/sim'
@@ -67,12 +67,12 @@ export default function MatchesPage() {
   const all = matches ?? []
 
   // The Oracle's accuracy rides the subtitle — one line, no extra strip.
-  // Source: model-calibration.json (the whole tournament scored under the
-  // current model with as-of-then inputs, recomputed by the pipeline each
+  // Single source: model-calibration.json (the whole tournament scored under
+  // the current model with as-of-then inputs, recomputed by the pipeline each
   // run); the graded-pick tally stands in until the first sync delivers it.
   const predictions = useLiveQuery(() => db.predictions.toArray(), [], [])
   const calibration = useLiveQuery(() => db.meta.get('calibration'), [])
-  const fallback = oracleRecord(all, predictions)
+  const fallback = oracleRecord(all, predictions, replayIndex(calibration))
   const rec = calibration
     ? { correct: calibration.correct, graded: calibration.matches, accuracyPct: calibration.accuracy_pct }
     : fallback

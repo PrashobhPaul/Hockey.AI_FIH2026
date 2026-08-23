@@ -3,7 +3,7 @@ import { Link, useSearchParams } from 'react-router-dom'
 import { useLiveQuery } from 'dexie-react-hooks'
 import { db } from '../db'
 import { Skeleton } from '../components/shared'
-import { activePredictions, derivePrediction, gradePrediction, oracleRecord } from '../engine/prediction'
+import { activePredictions, derivePrediction, gradePrediction, oracleRecord, replayIndex } from '../engine/prediction'
 import { useOracleBundle, buildRaceSeries } from '../engine/oracleBundle'
 import { useSwipeTabs } from '../components/useSwipeTabs'
 import { formatProbability } from '../engine/probability.js'
@@ -26,7 +26,7 @@ const SUBTITLES = {
   race: 'Champion-probability race · one simulation snapshot per completed match (0 → 32).',
   odds: 'Per-team stage odds · same engine snapshot as the race and bracket.',
   bracket: 'Live knockout bracket · pool standings drive every slot · engine predicts forward to the Gold Final.',
-  picks: 'Every pick published before the match starts · graded publicly · no edits, no deletions.',
+  picks: 'Every completed match, scored by the current model on what was known before its push-back.',
 }
 
 // The race leader, not the model's own report card — the header chip already
@@ -337,7 +337,7 @@ function BracketTab({ bundle, teams }) {
   )
 }
 
-function PicksTab({ matches, predictions, teams }) {
+function PicksTab({ matches, predictions, teams, replay }) {
   const byCode = new Map(teams.map(t => [t.code, t]))
   const byMatch = new Map(matches.map(m => [m.id, m]))
   const rows = activePredictions(predictions)
@@ -349,8 +349,16 @@ function PicksTab({ matches, predictions, teams }) {
 
   function PredCard({ p, m }) {
     const d = derivePrediction({ match: m, row: p })
-    const grade = gradePrediction(m, p)
-    const pickName = d.pick === 'HOME' ? byCode.get(m.home)?.name : d.pick === 'AWAY' ? byCode.get(m.away)?.name : 'Draw'
+    const grade = gradePrediction(m, p, replay)
+    // Scored matches show the replayed call so the tick, the pick and the
+    // headline are the same number three times over. The stored rationale
+    // was argued for the ledger pick, so it is dropped where the two differ
+    // rather than left contradicting the call beside it.
+    const hit = replay?.get?.(m.id)
+    const pick = hit?.pick ?? d.pick
+    const confPct = hit?.conf_pct ?? d.pickConfidencePct
+    const showReason = p.reason && (!hit || hit.pick === d.pick)
+    const pickName = pick === 'HOME' ? byCode.get(m.home)?.name : pick === 'AWAY' ? byCode.get(m.away)?.name : 'Draw'
     const h = byCode.get(m.home), a = byCode.get(m.away)
     return (
       <Link to={`/matches/${m.id}`} className="flex items-center gap-3.5 rounded-xl border border-white/5 bg-pitch-800 p-3.5 transition-colors hover:border-brand/20">
@@ -369,11 +377,11 @@ function PicksTab({ matches, predictions, teams }) {
             {m.status === 'completed' && m.score?.home != null && ` · FT ${m.score.home}-${m.score.away}`}
             {p.basis === 'model-backfill' && <span className="ml-1.5 rounded bg-pitch-700 px-1 py-px text-[9px] uppercase">backfill</span>}
           </div>
-          {p.reason && <p className="mt-1 line-clamp-2 text-[11px] leading-snug text-pitch-300">{p.reason}</p>}
+          {showReason && <p className="mt-1 line-clamp-2 text-[11px] leading-snug text-pitch-300">{p.reason}</p>}
         </div>
         <div className="shrink-0 text-right">
           <div className="text-xs font-bold text-brand">{pickName}</div>
-          <div className="font-mono text-[10px] text-pitch-400">{d.pickConfidencePct}% conf</div>
+          <div className="font-mono text-[10px] text-pitch-400">{confPct}% conf</div>
         </div>
       </Link>
     )
@@ -405,7 +413,8 @@ export default function OraclePage() {
   const teams = useLiveQuery(() => db.teams.toArray(), [], [])
   const bundle = useOracleBundle(teams, matches)
   const calibration = useLiveQuery(() => db.meta.get('calibration'), [])
-  const fallback = oracleRecord(matches ?? [], predictions ?? [])
+  const replay = replayIndex(calibration)
+  const fallback = oracleRecord(matches ?? [], predictions ?? [], replay)
   const rec = calibration
     ? { correct: calibration.correct, graded: calibration.matches, accuracyPct: calibration.accuracy_pct }
     : fallback
@@ -460,7 +469,7 @@ export default function OraclePage() {
             {tab === 'race' && <RaceTab bundle={bundle} teams={teams} />}
             {tab === 'odds' && <OddsTab bundle={bundle} teams={teams} />}
             {tab === 'bracket' && <BracketTab bundle={bundle} teams={teams} />}
-            {tab === 'picks' && <PicksTab matches={matches} predictions={predictions} teams={teams} />}
+            {tab === 'picks' && <PicksTab matches={matches} predictions={predictions} teams={teams} replay={replay} />}
           </>
         )}
     </div>
