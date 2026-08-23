@@ -12,10 +12,10 @@
 
 <br>
 
-<a href="https://github.com/PrashobhPaul/worldcup2026hockey/releases/download/apk-latest/Hockey.AI.apk">
+<a href="https://github.com/PrashobhPaul/Hockey.AI_FIH2026/releases/download/apk-latest/Hockey.AI.apk">
 <img src="https://img.shields.io/badge/Android-Download%20the%20app-3ddc84?style=for-the-badge&labelColor=0b1736" alt="Download the Android app">
 </a>
-<a href="https://prashobhpaul.github.io/worldcup2026hockey/">
+<a href="https://prashobhpaul.github.io/Hockey.AI_FIH2026/">
 <img src="https://img.shields.io/badge/▶%20Open%20in%20a%20browser-No%20install-ffb547?style=for-the-badge&labelColor=0b1736" alt="Open Hockey.AI in a browser">
 </a>
 
@@ -39,7 +39,7 @@ Download **Hockey.AI.apk** from the button above, open it, and allow the install
 
 This is a real standalone app, not a shortcut to a website. The whole interface ships inside the download and renders in the app's own window: no address bar, no browser chrome, its own icon in the app drawer, and it opens with no network at all. The previous build was a Trusted Web Activity — a thin wrapper that asked Chrome to display the site — which is why a browser bar kept appearing at the top.
 
-No Android device? The browser version at [prashobhpaul.github.io/worldcup2026hockey](https://prashobhpaul.github.io/worldcup2026hockey/) is the same app and still installs to your home screen on iPhone (Share → Add to Home Screen) or desktop Chrome. It just can't reach you while it's closed.
+No Android device? The browser version at [prashobhpaul.github.io/Hockey.AI_FIH2026](https://prashobhpaul.github.io/Hockey.AI_FIH2026/) is the same app and still installs to your home screen on iPhone (Share → Add to Home Screen) or desktop Chrome. It just can't reach you while it's closed.
 
 ---
 
