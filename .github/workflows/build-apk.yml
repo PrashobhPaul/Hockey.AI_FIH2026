@@ -1,0 +1,120 @@
+name: Build Android APK
+
+# Builds the Capacitor Android app and publishes the APK to the rolling
+# `apk-latest` release. Everything runs in CI — nothing to install locally.
+#
+# Signing: the repo ships a committed keystore (android/app/keystore/) so
+# every build works with zero setup and installs update in place. Optional
+# hardening: set ANDROID_KEYSTORE_B64 + ANDROID_KEYSTORE_PASSWORD secrets
+# (key alias must be "hockeyai") and CI signs with that private key instead.
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'public/**'
+      # The data pipeline commits here every few minutes during match days;
+      # a fresh score is not a reason to rebuild the app binary.
+      - '!public/data/**'
+      - 'android/**'
+      - 'index.html'
+      - 'capacitor.config.json'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'vite.config.js'
+      - '.github/workflows/build-apk.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-apk
+  cancel-in-progress: true
+
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: Accept Android SDK licenses
+        run: yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/null || true
+
+      - name: Compute build number
+        id: buildnum
+        run: echo "num=$((100 + ${{ github.run_number }}))" >> "$GITHUB_OUTPUT"
+
+      - run: npm ci
+
+      - name: Build web bundle (native mode)
+        run: npm run build
+        env:
+          CAP_BUILD: '1'
+          APK_BUILD: ${{ steps.buildnum.outputs.num }}
+
+      - name: Sync Capacitor project
+        run: npx cap sync android
+
+      - name: Keystore override (optional secrets)
+        env:
+          KS_B64: ${{ secrets.ANDROID_KEYSTORE_B64 }}
+          KS_PASS: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+        run: |
+          if [ -n "$KS_B64" ]; then
+            echo "$KS_B64" | base64 -d > "$RUNNER_TEMP/override.keystore"
+            {
+              echo "KEYSTORE_FILE=$RUNNER_TEMP/override.keystore"
+              echo "KEYSTORE_PASSWORD=$KS_PASS"
+              echo "KEY_PASSWORD=$KS_PASS"
+            } >> "$GITHUB_ENV"
+            echo "Signing with the private keystore from secrets."
+          else
+            echo "Signing with the committed keystore (default)."
+          fi
+
+      - name: Build signed APK
+        working-directory: android
+        env:
+          APP_VERSION_CODE: ${{ steps.buildnum.outputs.num }}
+          APP_VERSION_NAME: '1.${{ steps.buildnum.outputs.num }}'
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleRelease --no-daemon --stacktrace
+
+      - name: Verify signature
+        run: |
+          BT=$(ls "$ANDROID_HOME/build-tools" | sort -V | tail -n1)
+          "$ANDROID_HOME/build-tools/$BT/apksigner" verify --print-certs \
+            android/app/build/outputs/apk/release/app-release.apk
+          cp android/app/build/outputs/apk/release/app-release.apk Hockey.AI.apk
+
+      - name: Publish rolling release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BUILD_NUM: ${{ steps.buildnum.outputs.num }}
+        run: |
+          NOTES="$(printf '%s\n' \
+            'Standalone Android build of Hockey.AI — FIH Hockey World Cup 2026.' \
+            '' \
+            'Install: download Hockey.AI.apk below, open it, and allow the install when your phone asks. If you had the older Hockey.AI app installed, uninstall it first (one time only — the app was re-signed).' \
+            '' \
+            'Result alerts for every finished match are on by default; the app asks for notification permission on first launch.' \
+            '' \
+            "apk-build: $BUILD_NUM")"
+          gh release delete apk-latest --yes 2>/dev/null || true
+          git push --delete origin apk-latest 2>/dev/null || true
+          gh release create apk-latest Hockey.AI.apk \
+            --title "Hockey.AI for Android (build $BUILD_NUM)" \
+            --notes "$NOTES"
