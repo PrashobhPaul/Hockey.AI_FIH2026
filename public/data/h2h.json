@@ -1142,7 +1142,7 @@
         "date": "2026-08-23",
         "home": "FRA",
         "away": "IRL",
-        "home_goals": 1,
+        "home_goals": 2,
         "away_goals": 1,
         "current": false
       },
@@ -2033,5 +2033,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-23T14:01:51.105254+00:00"
+  "updated_at": "2026-08-23T14:12:49.273932+00:00"
 }
