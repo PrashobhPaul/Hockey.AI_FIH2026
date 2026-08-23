@@ -116,9 +116,22 @@ export function derivePrediction({ match, row }) {
   }
 }
 
+// model-calibration.json ships a per-match replay row for every completed
+// fixture. It is the single source the app scores against: headline number,
+// tick and displayed pick all read from it, so they cannot disagree. Without
+// it (first launch, before the first sync) the ledger stands in.
+export function replayIndex(calibration) {
+  const rows = calibration?.replay
+  if (!Array.isArray(rows)) return null
+  return new Map(rows.map(r => [r.id, r]))
+}
+
 // Grade a prediction against a finished match
-export function gradePrediction(match, row) {
-  if (!row || match.status !== 'completed') return 'pending'
+export function gradePrediction(match, row, replay = null) {
+  if (match.status !== 'completed') return 'pending'
+  const hit = replay?.get?.(match.id)
+  if (hit) return hit.correct ? 'correct' : 'wrong'
+  if (!row) return 'pending'
   const res = matchResult(match)
   const derived = derivePrediction({ match, row })
   if (!derived.pick) return 'pending'
@@ -134,8 +147,18 @@ export function gradePrediction(match, row) {
 export const activePredictions = predictions => predictions.filter(p => !p.superseded)
 
 // Oracle running record across all predictions (header chip: 🏑 5/24 · 71%)
-export function oracleRecord(matches, predictions) {
+export function oracleRecord(matches, predictions, replay = null) {
   const bySource = activePredictions(predictions).filter(p => p.source === 'oracle-v1' || !p.source)
+  if (replay?.size) {
+    let graded = 0, correct = 0
+    for (const m of matches) {
+      const hit = replay.get(m.id)
+      if (!hit) continue
+      graded++
+      if (hit.correct) correct++
+    }
+    return { graded, correct, total: bySource.length, accuracyPct: graded ? Math.round((correct / graded) * 100) : null }
+  }
   let graded = 0, correct = 0
   for (const p of bySource) {
     const m = matches.find(x => x.id === p.matchId)
