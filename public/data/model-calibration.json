@@ -5,5 +5,199 @@
   "brier": 0.3471,
   "log_loss": 0.6193,
   "method": "as-of-then replay: every completed match re-scored with only the form and rankings available before its own push-back",
-  "updated_at": "2026-08-23T01:34:59.116824+00:00"
+  "replay": [
+    {
+      "id": "D1",
+      "pick": "HOME",
+      "conf_pct": 93,
+      "correct": true
+    },
+    {
+      "id": "B1",
+      "pick": "HOME",
+      "conf_pct": 94,
+      "correct": true
+    },
+    {
+      "id": "D2",
+      "pick": "HOME",
+      "conf_pct": 94,
+      "correct": true
+    },
+    {
+      "id": "B2",
+      "pick": "HOME",
+      "conf_pct": 94,
+      "correct": true
+    },
+    {
+      "id": "C1",
+      "pick": "HOME",
+      "conf_pct": 92,
+      "correct": true
+    },
+    {
+      "id": "C2",
+      "pick": "HOME",
+      "conf_pct": 93,
+      "correct": true
+    },
+    {
+      "id": "A2",
+      "pick": "HOME",
+      "conf_pct": 94,
+      "correct": true
+    },
+    {
+      "id": "A1",
+      "pick": "HOME",
+      "conf_pct": 95,
+      "correct": true
+    },
+    {
+      "id": "D4",
+      "pick": "HOME",
+      "conf_pct": 55,
+      "correct": false
+    },
+    {
+      "id": "B4",
+      "pick": "HOME",
+      "conf_pct": 63,
+      "correct": false
+    },
+    {
+      "id": "D3",
+      "pick": "HOME",
+      "conf_pct": 70,
+      "correct": true
+    },
+    {
+      "id": "B3",
+      "pick": "HOME",
+      "conf_pct": 57,
+      "correct": false
+    },
+    {
+      "id": "A4",
+      "pick": "AWAY",
+      "conf_pct": 86,
+      "correct": true
+    },
+    {
+      "id": "C3",
+      "pick": "HOME",
+      "conf_pct": 49,
+      "correct": true
+    },
+    {
+      "id": "C4",
+      "pick": "HOME",
+      "conf_pct": 58,
+      "correct": true
+    },
+    {
+      "id": "A3",
+      "pick": "AWAY",
+      "conf_pct": 67,
+      "correct": true
+    },
+    {
+      "id": "D5",
+      "pick": "HOME",
+      "conf_pct": 95,
+      "correct": true
+    },
+    {
+      "id": "D6",
+      "pick": "HOME",
+      "conf_pct": 91,
+      "correct": true
+    },
+    {
+      "id": "B6",
+      "pick": "AWAY",
+      "conf_pct": 94,
+      "correct": false
+    },
+    {
+      "id": "B5",
+      "pick": "HOME",
+      "conf_pct": 95,
+      "correct": true
+    },
+    {
+      "id": "C5",
+      "pick": "HOME",
+      "conf_pct": 95,
+      "correct": false
+    },
+    {
+      "id": "A6",
+      "pick": "HOME",
+      "conf_pct": 90,
+      "correct": true
+    },
+    {
+      "id": "C6",
+      "pick": "HOME",
+      "conf_pct": 88,
+      "correct": true
+    },
+    {
+      "id": "A5",
+      "pick": "AWAY",
+      "conf_pct": 95,
+      "correct": true
+    },
+    {
+      "id": "S2H1",
+      "pick": "HOME",
+      "conf_pct": 56,
+      "correct": false
+    },
+    {
+      "id": "S2H2",
+      "pick": "HOME",
+      "conf_pct": 84,
+      "correct": true
+    },
+    {
+      "id": "S2F2",
+      "pick": "DRAW",
+      "conf_pct": 39,
+      "correct": false
+    },
+    {
+      "id": "S2F1",
+      "pick": "DRAW",
+      "conf_pct": 38,
+      "correct": true
+    },
+    {
+      "id": "S2G1",
+      "pick": "HOME",
+      "conf_pct": 86,
+      "correct": true
+    },
+    {
+      "id": "S2G2",
+      "pick": "HOME",
+      "conf_pct": 77,
+      "correct": true
+    },
+    {
+      "id": "S2E1",
+      "pick": "HOME",
+      "conf_pct": 93,
+      "correct": true
+    },
+    {
+      "id": "S2E2",
+      "pick": "HOME",
+      "conf_pct": 41,
+      "correct": false
+    }
+  ],
+  "updated_at": "2026-08-23T07:20:05.940616+00:00"
 }
