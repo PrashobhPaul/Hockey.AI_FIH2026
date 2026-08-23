@@ -4,7 +4,7 @@
   "location": "Belgium & Netherlands",
   "start": "2026-08-15",
   "end": "2026-08-30",
-  "last_updated": "2026-08-23T12:19:57.226357+00:00",
+  "last_updated": "2026-08-23T13:06:19.351869+00:00",
   "source": "FIH TMS",
   "phases": [
     "Pool A",
@@ -16987,7 +16987,7 @@
       "time": "14:30",
       "timezone": "CET",
       "venue": "BRU",
-      "status": "scheduled",
+      "status": "live",
       "score": {
         "home": null,
         "away": null
@@ -17327,7 +17327,12 @@
           "coach": "Mark Tumilty"
         }
       },
-      "tms_id": 22367
+      "tms_id": 22367,
+      "live_score": {
+        "home": 0,
+        "away": 0,
+        "at": "2026-08-23T13:06:07.371863+00:00"
+      }
     },
     {
       "id": "S2F3",
