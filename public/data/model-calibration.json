@@ -1,9 +1,9 @@
 {
-  "matches": 35,
+  "matches": 36,
   "correct": 24,
-  "accuracy_pct": 69,
-  "brier": 0.4069,
-  "log_loss": 0.7076,
+  "accuracy_pct": 67,
+  "brier": 0.4292,
+  "log_loss": 0.7377,
   "method": "as-of-then replay: every completed match re-scored with only the form and rankings available before its own push-back",
   "replay": [
     {
@@ -215,7 +215,13 @@
       "pick": "AWAY",
       "conf_pct": 59,
       "correct": false
+    },
+    {
+      "id": "S2F4",
+      "pick": "AWAY",
+      "conf_pct": 71,
+      "correct": false
     }
   ],
-  "updated_at": "2026-08-23T17:30:17.994559+00:00"
+  "updated_at": "2026-08-23T20:41:08.392851+00:00"
 }
