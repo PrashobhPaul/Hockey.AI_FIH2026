@@ -1225,8 +1225,8 @@
         "date": "2026-08-23",
         "home": "GER",
         "away": "AUS",
-        "home_goals": 3,
-        "away_goals": 1,
+        "home_goals": 4,
+        "away_goals": 2,
         "current": false
       },
       {
@@ -2042,5 +2042,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-23T16:13:50.843517+00:00"
+  "updated_at": "2026-08-23T16:44:36.543523+00:00"
 }
