@@ -1,1 +1,45 @@
+name: Seed tournament data (one-time)
 
+on:
+  workflow_dispatch:
+    inputs:
+      source_origin:
+        description: 'Site to copy the data from'
+        required: true
+        default: 'https://prashobhpaul.github.io/worldcup2026hockey'
+
+permissions:
+  contents: write
+
+jobs:
+  seed:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch the published data files
+        run: |
+          set -e
+          SRC="${{ github.event.inputs.source_origin }}/data"
+          mkdir -p public/data
+          for f in data-version.json fixtures.json teams.json players.json \
+                   predictions.json ai-stories.json h2h.json \
+                   player_rankings.json model-calibration.json; do
+            echo "-> $f"
+            curl -fsS "$SRC/$f" -o "public/data/$f"
+            python3 -c "import json,sys; json.load(open('public/data/$f'))"
+          done
+          echo "Fetched:"
+          ls -la public/data
+
+      - name: Commit
+        run: |
+          git config user.name "hockey-ai-bot"
+          git config user.email "actions@github.com"
+          git add public/data
+          if git diff --staged --quiet; then
+            echo "Data already present and identical — nothing to commit."
+          else
+            git commit -m "data: seed tournament data from the previous repository"
+            git push
+          fi
