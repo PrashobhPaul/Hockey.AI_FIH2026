@@ -4,7 +4,7 @@
   "location": "Belgium & Netherlands",
   "start": "2026-08-15",
   "end": "2026-08-30",
-  "last_updated": "2026-08-23T18:34:26.283904+00:00",
+  "last_updated": "2026-08-23T19:00:51.018492+00:00",
   "source": "FIH TMS",
   "phases": [
     "Pool A",
@@ -18304,7 +18304,12 @@
           "coach": "Shane McLeod"
         }
       },
-      "tms_id": 22369
+      "tms_id": 22369,
+      "live_score": {
+        "home": 0,
+        "away": 1,
+        "at": "2026-08-23T19:00:41.278415+00:00"
+      }
     },
     {
       "id": "S2G3",
