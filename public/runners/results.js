@@ -10,7 +10,7 @@
 // This runtime is NOT a browser: no window, no localStorage, no DOM. Only
 // fetch, CapacitorKV and CapacitorNotifications exist — keep it that way.
 
-var DATA = 'https://prashobhpaul.github.io/worldcup2026hockey/data'
+var DATA = 'https://prashobhpaul.github.io/Hockey.AI_FIH2026/data'
 var FRESH_MS = 18 * 60 * 60 * 1000 // never replay results older than 18h
 var MAX_PER_RUN = 6                // a burst of finals stays readable
 
