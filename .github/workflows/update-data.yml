@@ -1,0 +1,95 @@
+name: Update Hockey Data
+
+on:
+  schedule:
+    # Every 10 min through CET match hours (first push-backs are 09:30 CET =
+    # 07:30 UTC; the old 10-20 UTC window missed the morning games entirely,
+    # which is why match 29 sat scoreless for two hours). At 15-minute cadence
+    # a goal could sit unseen for most of a quarter — NED v IND showed 1-0
+    # while the real score was 3-1; ten minutes keeps the running score within
+    # a few minutes of the pitch.
+    - cron: '*/10 6-20 15-30 8 *'
+    # Hourly fallback rest of day
+    - cron: '0 * * * *'
+  workflow_dispatch:
+    inputs:
+      probe_match_ids:
+        description: 'Comma-separated TMS match ids to dump (debug only)'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+  actions: write  # chain the Pages deploy after a data push
+
+concurrency:
+  group: data-pipeline
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install pdfplumber
+
+      - name: Update fixtures, statuses & Oracle picks
+        env:
+          PROBE_MATCH_IDS: ${{ github.event.inputs.probe_match_ids }}
+        run: python scripts/update_data.py
+
+      - name: Crop uploaded emblem artwork (if present)
+        run: python scripts/crop_emblem.py
+
+      - name: Generate AI match stories
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: python scripts/generate_ai_stories.py
+
+      # AI-authored pre-match rationales for upcoming picks; without a key the
+      # deterministic rationale the pipeline writes stands (see ai_provider.py).
+      - name: Generate AI pick rationales
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: python scripts/generate_ai_rationales.py
+
+      # Model calibration, replayed as-of-then over every completed match —
+      # published alongside the ledger record so the Trust page can show both.
+      - name: Publish model calibration
+        run: python scripts/backtest_model.py --publish
+
+      - name: Commit & push if changed
+        id: commit
+        run: |
+          git config user.name "hockey-ai-bot"
+          git config user.email "actions@github.com"
+          git add public/data/
+          git add public/emblem.png 2>/dev/null || true
+          if ! git diff --staged --quiet; then
+            git commit -m "data: auto-update $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push
+            echo "pushed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "No data changes."
+            echo "pushed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      # GITHUB_TOKEN pushes never trigger `on: push` workflows, so the Pages
+      # deploy must be dispatched explicitly or the live site serves stale data.
+      - name: Redeploy GitHub Pages with fresh data
+        if: steps.commit.outputs.pushed == 'true'
+        run: |
+          curl -sS -X POST \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/workflows/deploy-pages.yml/dispatches" \
+            -d '{"ref":"main"}'
+          echo "Pages redeploy dispatched."
