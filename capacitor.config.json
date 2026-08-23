@@ -1,0 +1,32 @@
+{
+  "appId": "com.prashobhpaul.hockeyai",
+  "appName": "Hockey.AI",
+  "webDir": "dist",
+  "android": {
+    "allowMixedContent": false,
+    "adjustMarginsForEdgeToEdge": "auto"
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 400,
+      "launchAutoHide": true,
+      "backgroundColor": "#0b1736",
+      "androidScaleType": "CENTER_INSIDE",
+      "splashFullScreen": false,
+      "splashImmersive": false
+    },
+    "LocalNotifications": {
+      "smallIcon": "ic_stat_result",
+      "iconColor": "#ffb547"
+    },
+    "BackgroundRunner": {
+      "label": "com.prashobhpaul.hockeyai.results",
+      "src": "runners/results.js",
+      "event": "checkResults",
+      "repeat": true,
+      "interval": 15,
+      "autoStart": true
+    }
+  },
+  "backgroundColor": "#0b1736"
+}
