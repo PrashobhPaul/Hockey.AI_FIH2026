@@ -16,10 +16,12 @@ re-check calibration as the tournament grows:
     python3 scripts/backtest_model.py --publish  # also write
                                                  # public/data/model-calibration.json
 
---publish keeps the app's Trust page honest about the difference between
-the PUBLISHED record (what the picks in the ledger actually scored — never
-rewritten) and what the CURRENT model scores when replayed over the same
-matches with as-of-then inputs. Two different numbers, both true, labelled.
+--publish writes the replay to public/data/model-calibration.json, including
+a per-match row for every completed fixture. The app reads that file as its
+single source for accuracy: the headline number, the tick on each pick card
+and the pick each card shows all come from the same replay, so they always
+agree. The ledger in predictions.json is still written and still append-only
+— it just is not what the app scores against any more.
 """
 import json
 import math
@@ -67,6 +69,7 @@ def main():
 
     brier = logloss = 0.0
     correct = 0
+    replay = []
     for i, m in enumerate(done):
         pts = {}
         for code, opp in ((m['home'], m['away']), (m['away'], m['home'])):
@@ -80,8 +83,18 @@ def main():
         probs = (ph, pd, pa)
         brier += sum((p - o) ** 2 for p, o in zip(probs, out))
         logloss -= math.log(max(1e-9, sum(p * o for p, o in zip(probs, out))))
-        if max(range(3), key=lambda k: probs[k]) == out.index(1):
+        top = max(range(3), key=lambda k: probs[k])
+        hit = top == out.index(1)
+        if hit:
             correct += 1
+        # Per-match replay row: the app grades and labels every pick from
+        # this, so the visible ticks always add up to the headline number.
+        replay.append({
+            'id': m['id'],
+            'pick': ('HOME', 'DRAW', 'AWAY')[top],
+            'conf_pct': round(100 * probs[top]),
+            'correct': hit,
+        })
 
     n = len(done)
     print(f'{n} completed matches, scored as-of-then:')
@@ -99,6 +112,7 @@ def main():
             'brier': round(brier / n, 4),
             'log_loss': round(logloss / n, 4),
             'method': 'as-of-then replay: every completed match re-scored with only the form and rankings available before its own push-back',
+            'replay': replay,
         }
         try:
             with open(out_path) as fh:
