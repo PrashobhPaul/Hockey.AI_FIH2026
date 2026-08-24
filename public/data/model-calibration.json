@@ -1,9 +1,9 @@
 {
-  "matches": 39,
+  "matches": 40,
   "correct": 24,
-  "accuracy_pct": 62,
-  "brier": 0.4364,
-  "log_loss": 0.7508,
+  "accuracy_pct": 60,
+  "brier": 0.4597,
+  "log_loss": 0.7839,
   "method": "as-of-then replay: every completed match re-scored with only the form and rankings available before its own push-back",
   "replay": [
     {
@@ -239,7 +239,13 @@
       "pick": "HOME",
       "conf_pct": 72,
       "correct": true
+    },
+    {
+      "id": "S2E4",
+      "pick": "HOME",
+      "conf_pct": 77,
+      "correct": false
     }
   ],
-  "updated_at": "2026-08-24T14:30:45.068621+00:00"
+  "updated_at": "2026-08-24T17:55:46.989684+00:00"
 }

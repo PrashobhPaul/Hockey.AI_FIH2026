@@ -1938,7 +1938,7 @@
         "home": "NED",
         "away": "ENG",
         "home_goals": 2,
-        "away_goals": 1,
+        "away_goals": 2,
         "current": false
       },
       {
@@ -2087,5 +2087,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-24T17:22:40.813036+00:00"
+  "updated_at": "2026-08-24T17:55:15.834444+00:00"
 }
