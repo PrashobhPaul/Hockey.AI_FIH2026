@@ -1,6 +1,6 @@
 {
   "source": "oracle-v1",
-  "updated_at": "2026-08-24T19:20:56.435103+00:00",
+  "updated_at": "2026-08-24T19:40:30.653441+00:00",
   "predictions": [
     {
       "id": "oracle-v1:D1",
@@ -2929,7 +2929,10 @@
       "pick": "AWAY",
       "pick_confidence": 0.941,
       "reason": "FIH #10 FRA favoured over #18 JPN — Elo model from world rankings. Classification slot decided by pool standings. Published pre-match.",
-      "publishedAt": "2026-08-24T12:23:07.507558+00:00"
+      "publishedAt": "2026-08-24T12:23:07.507558+00:00",
+      "superseded": true,
+      "superseded_at": "2026-08-24T19:40:30.652745+00:00",
+      "superseded_reason": "Inputs refreshed pre-match: current FIH ranking points and the calibrated draw-aware model."
     },
     {
       "id": "oracle-v1:POS15",
@@ -2942,7 +2945,10 @@
       "pick": "AWAY",
       "pick_confidence": 0.613,
       "reason": "FIH #14 MAS favoured over #16 WAL — Elo model from world rankings. Classification slot decided by pool standings. Published pre-match.",
-      "publishedAt": "2026-08-24T12:23:07.507558+00:00"
+      "publishedAt": "2026-08-24T12:23:07.507558+00:00",
+      "superseded": true,
+      "superseded_at": "2026-08-24T19:40:30.652745+00:00",
+      "superseded_reason": "Inputs refreshed pre-match: current FIH ranking points and the calibrated draw-aware model."
     },
     {
       "id": "oracle-v1:POS11",
@@ -2955,7 +2961,10 @@
       "pick": "AWAY",
       "pick_confidence": 0.537,
       "reason": "FIH #12 RSA favoured over #13 PAK — Elo model from world rankings. Classification slot decided by pool standings. Published pre-match.",
-      "publishedAt": "2026-08-24T12:23:07.507558+00:00"
+      "publishedAt": "2026-08-24T12:23:07.507558+00:00",
+      "superseded": true,
+      "superseded_at": "2026-08-24T19:40:30.652745+00:00",
+      "superseded_reason": "Inputs refreshed pre-match: current FIH ranking points and the calibrated draw-aware model."
     },
     {
       "id": "oracle-v1:POS9",
@@ -3021,6 +3030,48 @@
       "pick_confidence": 0.569,
       "reason": "FIH #3 GER favoured over #7 ARG — Elo model from world rankings. Semi Final slot decided by pool standings. Published pre-match.",
       "publishedAt": "2026-08-24T17:55:46.575262+00:00"
+    },
+    {
+      "id": "oracle-v1:POS13:r2",
+      "matchId": "POS13",
+      "source": "oracle-v1",
+      "basis": "pre-match",
+      "revises": "oracle-v1:POS13",
+      "p_home_win": 0.037,
+      "p_draw": 0.0,
+      "p_away_win": 0.963,
+      "pick": "AWAY",
+      "pick_confidence": 0.963,
+      "reason": "FIH #10 FRA favoured over #18 JPN — points-based Elo with a full draw model. Revised pre-match; the original pick stays in the ledger.",
+      "publishedAt": "2026-08-24T19:40:30.652745+00:00"
+    },
+    {
+      "id": "oracle-v1:POS15:r2",
+      "matchId": "POS15",
+      "source": "oracle-v1",
+      "basis": "pre-match",
+      "revises": "oracle-v1:POS15",
+      "p_home_win": 0.35,
+      "p_draw": 0.0,
+      "p_away_win": 0.65,
+      "pick": "AWAY",
+      "pick_confidence": 0.65,
+      "reason": "FIH #14 MAS favoured over #16 WAL — points-based Elo with a full draw model. Revised pre-match; the original pick stays in the ledger.",
+      "publishedAt": "2026-08-24T19:40:30.652745+00:00"
+    },
+    {
+      "id": "oracle-v1:POS11:r2",
+      "matchId": "POS11",
+      "source": "oracle-v1",
+      "basis": "pre-match",
+      "revises": "oracle-v1:POS11",
+      "p_home_win": 0.426,
+      "p_draw": 0.0,
+      "p_away_win": 0.574,
+      "pick": "AWAY",
+      "pick_confidence": 0.574,
+      "reason": "FIH #12 RSA favoured over #13 PAK — points-based Elo with a full draw model. Revised pre-match; the original pick stays in the ledger.",
+      "publishedAt": "2026-08-24T19:40:30.652745+00:00"
     }
   ]
 }

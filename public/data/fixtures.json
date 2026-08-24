@@ -4,7 +4,7 @@
   "location": "Belgium & Netherlands",
   "start": "2026-08-15",
   "end": "2026-08-30",
-  "last_updated": "2026-08-24T19:20:56.435103+00:00",
+  "last_updated": "2026-08-24T19:40:30.653441+00:00",
   "source": "FIH TMS",
   "phases": [
     "Pool A",
@@ -20879,7 +20879,8 @@
           "team": "FRA",
           "coach": "John-John Dohmen"
         }
-      }
+      },
+      "tms_id": 22374
     },
     {
       "id": "POS15",
@@ -21249,7 +21250,8 @@
           "team": "MAS",
           "coach": "Brendon Carolan"
         }
-      }
+      },
+      "tms_id": 22375
     },
     {
       "id": "POS11",
@@ -21612,7 +21614,8 @@
           "team": "RSA",
           "coach": "Devon van der Merwe"
         }
-      }
+      },
+      "tms_id": 22376
     },
     {
       "id": "POS9",
@@ -21968,7 +21971,8 @@
           "team": "IRL",
           "coach": "Mark Tumilty"
         }
-      }
+      },
+      "tms_id": 22377
     },
     {
       "id": "POS5",
