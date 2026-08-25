@@ -1,9 +1,9 @@
 {
   "matches": 40,
-  "correct": 24,
-  "accuracy_pct": 60,
-  "brier": 0.4597,
-  "log_loss": 0.7839,
+  "correct": 25,
+  "accuracy_pct": 62,
+  "brier": 0.4516,
+  "log_loss": 0.7658,
   "method": "as-of-then replay: every completed match re-scored with only the form and rankings available before its own push-back",
   "replay": [
     {
@@ -45,19 +45,19 @@
     {
       "id": "A2",
       "pick": "HOME",
-      "conf_pct": 94,
+      "conf_pct": 93,
       "correct": true
     },
     {
       "id": "A1",
       "pick": "HOME",
-      "conf_pct": 95,
+      "conf_pct": 94,
       "correct": true
     },
     {
       "id": "D4",
       "pick": "HOME",
-      "conf_pct": 55,
+      "conf_pct": 58,
       "correct": false
     },
     {
@@ -69,7 +69,7 @@
     {
       "id": "D3",
       "pick": "HOME",
-      "conf_pct": 70,
+      "conf_pct": 78,
       "correct": true
     },
     {
@@ -81,7 +81,7 @@
     {
       "id": "A4",
       "pick": "AWAY",
-      "conf_pct": 86,
+      "conf_pct": 84,
       "correct": true
     },
     {
@@ -99,7 +99,7 @@
     {
       "id": "A3",
       "pick": "AWAY",
-      "conf_pct": 67,
+      "conf_pct": 57,
       "correct": true
     },
     {
@@ -177,25 +177,25 @@
     {
       "id": "S2G1",
       "pick": "HOME",
-      "conf_pct": 86,
+      "conf_pct": 92,
       "correct": true
     },
     {
       "id": "S2G2",
       "pick": "HOME",
-      "conf_pct": 77,
+      "conf_pct": 58,
       "correct": true
     },
     {
       "id": "S2E1",
       "pick": "HOME",
-      "conf_pct": 93,
+      "conf_pct": 94,
       "correct": true
     },
     {
       "id": "S2E2",
-      "pick": "HOME",
-      "conf_pct": 41,
+      "pick": "DRAW",
+      "conf_pct": 38,
       "correct": false
     },
     {
@@ -224,28 +224,28 @@
     },
     {
       "id": "S2G3",
-      "pick": "AWAY",
-      "conf_pct": 38,
-      "correct": false
+      "pick": "HOME",
+      "conf_pct": 41,
+      "correct": true
     },
     {
       "id": "S2G4",
       "pick": "HOME",
-      "conf_pct": 75,
+      "conf_pct": 87,
       "correct": true
     },
     {
       "id": "S2E3",
       "pick": "HOME",
-      "conf_pct": 72,
+      "conf_pct": 85,
       "correct": true
     },
     {
       "id": "S2E4",
       "pick": "HOME",
-      "conf_pct": 77,
+      "conf_pct": 75,
       "correct": false
     }
   ],
-  "updated_at": "2026-08-24T17:55:46.989684+00:00"
+  "updated_at": "2026-08-25T00:33:51.606265+00:00"
 }
