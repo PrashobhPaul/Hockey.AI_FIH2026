@@ -2640,6 +2640,15 @@
     ],
     "ARG-GER": [
       {
+        "competition": "FIH Hockey World Cup Belgium &amp; Netherlands 2026 (M)",
+        "date": "2026-08-28",
+        "home": "GER",
+        "away": "ARG",
+        "home_goals": 1,
+        "away_goals": 0,
+        "current": false
+      },
+      {
         "competition": "2025-26 FIH Hockey Pro League (M)",
         "date": "2026-06-24",
         "home": "GER",
@@ -2839,15 +2848,6 @@
       }
     ],
     "BEL-IND": [
-      {
-        "competition": "FIH Hockey World Cup Belgium &amp; Netherlands 2026 (M)",
-        "date": "2026-08-28",
-        "home": "IND",
-        "away": "BEL",
-        "home_goals": 2,
-        "away_goals": 3,
-        "current": false
-      },
       {
         "competition": "2025-26 FIH Hockey Pro League (M)",
         "date": "2026-02-14",
@@ -3102,5 +3102,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-28T17:53:38.189360+00:00"
+  "updated_at": "2026-08-28T19:42:29.774459+00:00"
 }
