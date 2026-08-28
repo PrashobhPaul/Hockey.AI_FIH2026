@@ -1,9 +1,9 @@
 {
-  "matches": 40,
-  "correct": 25,
-  "accuracy_pct": 62,
-  "brier": 0.4516,
-  "log_loss": 0.7658,
+  "matches": 44,
+  "correct": 27,
+  "accuracy_pct": 61,
+  "brier": 0.4725,
+  "log_loss": 0.8022,
   "method": "as-of-then replay: every completed match re-scored with only the form and rankings available before its own push-back",
   "replay": [
     {
@@ -245,7 +245,31 @@
       "pick": "HOME",
       "conf_pct": 75,
       "correct": false
+    },
+    {
+      "id": "POS13",
+      "pick": "AWAY",
+      "conf_pct": 90,
+      "correct": true
+    },
+    {
+      "id": "POS9",
+      "pick": "HOME",
+      "conf_pct": 53,
+      "correct": true
+    },
+    {
+      "id": "POS5",
+      "pick": "DRAW",
+      "conf_pct": 39,
+      "correct": false
+    },
+    {
+      "id": "SF1",
+      "pick": "HOME",
+      "conf_pct": 85,
+      "correct": false
     }
   ],
-  "updated_at": "2026-08-25T00:33:51.606265+00:00"
+  "updated_at": "2026-08-28T17:54:05.370117+00:00"
 }
