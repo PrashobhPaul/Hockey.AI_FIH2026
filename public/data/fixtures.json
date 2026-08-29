@@ -4,7 +4,7 @@
   "location": "Belgium & Netherlands",
   "start": "2026-08-15",
   "end": "2026-08-30",
-  "last_updated": "2026-08-29T01:19:33.011461+00:00",
+  "last_updated": "2026-08-29T02:33:06.637613+00:00",
   "source": "FIH TMS",
   "phases": [
     "Pool A",
@@ -2627,7 +2627,7 @@
       "enrichment": "official",
       "lineups": {
         "source": "estimated",
-        "generated_at": "2026-08-28T17:54:04.941188+00:00",
+        "generated_at": "2026-08-29T02:33:06.615560+00:00",
         "home": {
           "formation": "4-3-3",
           "fromTeamList": true,
@@ -2651,6 +2651,15 @@
               "goalkeeper": false
             },
             {
+              "playerId": "NED_18",
+              "name": "Duco Telgenkamp",
+              "number": 51,
+              "line": "Defender",
+              "position": null,
+              "captain": false,
+              "goalkeeper": false
+            },
+            {
               "playerId": "NED_05",
               "name": "Jip Janssen",
               "number": 2,
@@ -2663,15 +2672,6 @@
               "playerId": "NED_12",
               "name": "Tjep Hoedemakers",
               "number": 19,
-              "line": "Defender",
-              "position": null,
-              "captain": false,
-              "goalkeeper": false
-            },
-            {
-              "playerId": "NED_18",
-              "name": "Duco Telgenkamp",
-              "number": 51,
               "line": "Defender",
               "position": null,
               "captain": false,
@@ -6111,7 +6111,7 @@
       "date": "2026-08-30",
       "time": "14:00",
       "timezone": "CET",
-      "venue": "BRU",
+      "venue": "AMV",
       "status": "completed",
       "score": {
         "home": 1,
@@ -6155,7 +6155,7 @@
       ],
       "lineups": {
         "source": "estimated",
-        "generated_at": "2026-08-29T01:19:32.997133+00:00",
+        "generated_at": "2026-08-29T02:33:06.618901+00:00",
         "home": {
           "formation": "4-3-3",
           "fromTeamList": true,
@@ -6344,6 +6344,15 @@
               "goalkeeper": false
             },
             {
+              "playerId": "NED_18",
+              "name": "Duco Telgenkamp",
+              "number": 51,
+              "line": "Defender",
+              "position": null,
+              "captain": false,
+              "goalkeeper": false
+            },
+            {
               "playerId": "NED_05",
               "name": "Jip Janssen",
               "number": 2,
@@ -6356,15 +6365,6 @@
               "playerId": "NED_12",
               "name": "Tjep Hoedemakers",
               "number": 19,
-              "line": "Defender",
-              "position": null,
-              "captain": false,
-              "goalkeeper": false
-            },
-            {
-              "playerId": "NED_18",
-              "name": "Duco Telgenkamp",
-              "number": 51,
               "line": "Defender",
               "position": null,
               "captain": false,
@@ -10290,7 +10290,7 @@
       ],
       "lineups": {
         "source": "estimated",
-        "generated_at": "2026-08-28T17:54:04.948022+00:00",
+        "generated_at": "2026-08-29T02:33:06.622684+00:00",
         "home": {
           "formation": "4-3-3",
           "fromTeamList": true,
@@ -10486,6 +10486,15 @@
               "goalkeeper": false
             },
             {
+              "playerId": "NED_18",
+              "name": "Duco Telgenkamp",
+              "number": 51,
+              "line": "Defender",
+              "position": null,
+              "captain": false,
+              "goalkeeper": false
+            },
+            {
               "playerId": "NED_05",
               "name": "Jip Janssen",
               "number": 2,
@@ -10498,15 +10507,6 @@
               "playerId": "NED_12",
               "name": "Tjep Hoedemakers",
               "number": 19,
-              "line": "Defender",
-              "position": null,
-              "captain": false,
-              "goalkeeper": false
-            },
-            {
-              "playerId": "NED_18",
-              "name": "Duco Telgenkamp",
-              "number": 51,
               "line": "Defender",
               "position": null,
               "captain": false,
@@ -15474,7 +15474,7 @@
       ],
       "lineups": {
         "source": "estimated",
-        "generated_at": "2026-08-28T17:54:04.952499+00:00",
+        "generated_at": "2026-08-29T02:33:06.627381+00:00",
         "home": {
           "formation": "4-3-3",
           "fromTeamList": true,
@@ -15498,6 +15498,15 @@
               "goalkeeper": false
             },
             {
+              "playerId": "NED_18",
+              "name": "Duco Telgenkamp",
+              "number": 51,
+              "line": "Defender",
+              "position": null,
+              "captain": false,
+              "goalkeeper": false
+            },
+            {
               "playerId": "NED_05",
               "name": "Jip Janssen",
               "number": 2,
@@ -15510,15 +15519,6 @@
               "playerId": "NED_12",
               "name": "Tjep Hoedemakers",
               "number": 19,
-              "line": "Defender",
-              "position": null,
-              "captain": false,
-              "goalkeeper": false
-            },
-            {
-              "playerId": "NED_18",
-              "name": "Duco Telgenkamp",
-              "number": 51,
               "line": "Defender",
               "position": null,
               "captain": false,
@@ -20079,7 +20079,7 @@
       ],
       "lineups": {
         "source": "estimated",
-        "generated_at": "2026-08-28T17:54:04.956550+00:00",
+        "generated_at": "2026-08-29T02:33:06.631629+00:00",
         "home": {
           "formation": "4-3-3",
           "fromTeamList": true,
@@ -20103,6 +20103,15 @@
               "goalkeeper": false
             },
             {
+              "playerId": "NED_18",
+              "name": "Duco Telgenkamp",
+              "number": 51,
+              "line": "Defender",
+              "position": null,
+              "captain": false,
+              "goalkeeper": false
+            },
+            {
               "playerId": "NED_05",
               "name": "Jip Janssen",
               "number": 2,
@@ -20115,15 +20124,6 @@
               "playerId": "NED_12",
               "name": "Tjep Hoedemakers",
               "number": 19,
-              "line": "Defender",
-              "position": null,
-              "captain": false,
-              "goalkeeper": false
-            },
-            {
-              "playerId": "NED_18",
-              "name": "Duco Telgenkamp",
-              "number": 51,
               "line": "Defender",
               "position": null,
               "captain": false,
@@ -23248,7 +23248,7 @@
       ],
       "lineups": {
         "source": "estimated",
-        "generated_at": "2026-08-28T17:54:04.959696+00:00",
+        "generated_at": "2026-08-29T02:33:06.635020+00:00",
         "home": {
           "formation": "4-3-3",
           "fromTeamList": true,
@@ -23272,6 +23272,15 @@
               "goalkeeper": false
             },
             {
+              "playerId": "NED_18",
+              "name": "Duco Telgenkamp",
+              "number": 51,
+              "line": "Defender",
+              "position": null,
+              "captain": false,
+              "goalkeeper": false
+            },
+            {
               "playerId": "NED_05",
               "name": "Jip Janssen",
               "number": 2,
@@ -23284,15 +23293,6 @@
               "playerId": "NED_12",
               "name": "Tjep Hoedemakers",
               "number": 19,
-              "line": "Defender",
-              "position": null,
-              "captain": false,
-              "goalkeeper": false
-            },
-            {
-              "playerId": "NED_18",
-              "name": "Duco Telgenkamp",
-              "number": 51,
               "line": "Defender",
               "position": null,
               "captain": false,
@@ -24179,19 +24179,54 @@
       "slotLabel": "Loser 47 vs Loser 48",
       "matchNo": 49,
       "provisional": true,
-      "date": "2026-08-30",
-      "time": "14:00",
+      "date": "2026-08-18",
+      "time": "18:00",
       "timezone": "CET",
-      "venue": "BRU",
-      "status": "scheduled",
+      "venue": "AMV",
+      "status": "completed",
       "score": {
-        "home": null,
-        "away": null
+        "home": 3,
+        "away": 1
       },
-      "events": [],
+      "events": [
+        {
+          "minute": 7,
+          "team": "NED",
+          "type": "goal",
+          "via": "FG",
+          "player": "Thierry Brinkman"
+        },
+        {
+          "minute": 11,
+          "team": "ARG",
+          "type": "goal",
+          "via": "PC",
+          "player": "Nicolas della Torre"
+        },
+        {
+          "minute": 27,
+          "team": "ARG",
+          "type": "yellow_card",
+          "player": "Matias Andreotti"
+        },
+        {
+          "minute": 34,
+          "team": "NED",
+          "type": "goal",
+          "via": "PC",
+          "player": "Tijmen Reyenga"
+        },
+        {
+          "minute": 42,
+          "team": "NED",
+          "type": "goal",
+          "via": "FG",
+          "player": "Duco Telgenkamp"
+        }
+      ],
       "lineups": {
         "source": "estimated",
-        "generated_at": "2026-08-29T01:19:33.010285+00:00",
+        "generated_at": "2026-08-29T02:33:06.635952+00:00",
         "home": {
           "formation": "4-3-3",
           "fromTeamList": true,
@@ -24215,6 +24250,15 @@
               "goalkeeper": false
             },
             {
+              "playerId": "NED_18",
+              "name": "Duco Telgenkamp",
+              "number": 51,
+              "line": "Defender",
+              "position": null,
+              "captain": false,
+              "goalkeeper": false
+            },
+            {
               "playerId": "NED_05",
               "name": "Jip Janssen",
               "number": 2,
@@ -24227,15 +24271,6 @@
               "playerId": "NED_12",
               "name": "Tjep Hoedemakers",
               "number": 19,
-              "line": "Defender",
-              "position": null,
-              "captain": false,
-              "goalkeeper": false
-            },
-            {
-              "playerId": "NED_18",
-              "name": "Duco Telgenkamp",
-              "number": 51,
               "line": "Defender",
               "position": null,
               "captain": false,
@@ -24515,7 +24550,94 @@
           "team": "ARG",
           "coach": "Lucas Rey"
         }
-      }
+      },
+      "tms_id": 22349,
+      "result_source": "fih-tms-matches",
+      "penalty_corners": {
+        "home": 1,
+        "away": 1
+      },
+      "stats": {
+        "home": {
+          "goals": 3,
+          "shots": 11,
+          "circle_entries": 23,
+          "penalty_corners": 1,
+          "possession": 56,
+          "green_cards": 0,
+          "yellow_cards": 0,
+          "red_cards": 0
+        },
+        "away": {
+          "goals": 1,
+          "shots": 4,
+          "circle_entries": 16,
+          "penalty_corners": 1,
+          "possession": 44,
+          "green_cards": 0,
+          "yellow_cards": 1,
+          "red_cards": 0
+        }
+      },
+      "commentary": [
+        {
+          "minute": 0,
+          "text": "We're under way — NED vs ARG.",
+          "seq": 0
+        },
+        {
+          "minute": 7,
+          "team": "NED",
+          "text": "GOAL! Thierry Brinkman (NED) scores from a field goal — NED 1-0 ARG.",
+          "seq": 1
+        },
+        {
+          "minute": 11,
+          "team": "ARG",
+          "text": "GOAL! Nicolas della Torre (ARG) scores from a penalty corner — NED 1-1 ARG.",
+          "seq": 2
+        },
+        {
+          "minute": 15,
+          "text": "End of Q1: NED 1-1 ARG.",
+          "seq": 3
+        },
+        {
+          "minute": 27,
+          "team": "ARG",
+          "text": "Yellow Card for Matias Andreotti (ARG) — 5-minute suspension.",
+          "seq": 4
+        },
+        {
+          "minute": 30,
+          "text": "Half-time: NED 1-1 ARG.",
+          "seq": 5
+        },
+        {
+          "minute": 34,
+          "team": "NED",
+          "text": "GOAL! Tijmen Reyenga (NED) scores from a penalty corner — NED 2-1 ARG.",
+          "seq": 6
+        },
+        {
+          "minute": 42,
+          "team": "NED",
+          "text": "GOAL! Duco Telgenkamp (NED) scores from a field goal — NED 3-1 ARG.",
+          "seq": 7
+        },
+        {
+          "minute": 45,
+          "text": "End of Q3: NED 3-1 ARG.",
+          "seq": 8
+        },
+        {
+          "minute": 60,
+          "text": "Full-time: NED 3-1 ARG.",
+          "seq": 9
+        }
+      ],
+      "enrichment": "official",
+      "events_rev": 2
     },
     {
       "id": "GOLD",
@@ -24528,16 +24650,38 @@
       "slotLabel": "Winner 47 vs Winner 48",
       "matchNo": 50,
       "provisional": true,
-      "date": "2026-08-30",
-      "time": "16:30",
+      "date": "2026-08-21",
+      "time": "17:00",
       "timezone": "CET",
       "venue": "BRU",
-      "status": "scheduled",
+      "status": "completed",
       "score": {
-        "home": null,
-        "away": null
+        "home": 2,
+        "away": 1
       },
-      "events": [],
+      "events": [
+        {
+          "minute": 26,
+          "team": "GER",
+          "type": "goal",
+          "via": "FG",
+          "player": "Justus Weigand"
+        },
+        {
+          "minute": 30,
+          "team": "ESP",
+          "type": "goal",
+          "via": "PS",
+          "player": "José Basterra"
+        },
+        {
+          "minute": 50,
+          "team": "ESP",
+          "type": "goal",
+          "via": "FG",
+          "player": "José Basterra"
+        }
+      ],
       "lineups": {
         "source": "estimated",
         "generated_at": "2026-08-29T01:19:33.010545+00:00",
@@ -24871,7 +25015,82 @@
           "team": "GER",
           "coach": "André Henning"
         }
-      }
+      },
+      "tms_id": 22360,
+      "result_source": "fih-tms-matches",
+      "penalty_corners": {
+        "home": 0,
+        "away": 0
+      },
+      "stats": {
+        "home": {
+          "goals": 2,
+          "shots": 7,
+          "circle_entries": 22,
+          "penalty_corners": 0,
+          "possession": 57,
+          "green_cards": 0,
+          "yellow_cards": 0,
+          "red_cards": 0
+        },
+        "away": {
+          "goals": 1,
+          "shots": 5,
+          "circle_entries": 20,
+          "penalty_corners": 0,
+          "possession": 43,
+          "green_cards": 0,
+          "yellow_cards": 0,
+          "red_cards": 0
+        }
+      },
+      "commentary": [
+        {
+          "minute": 0,
+          "text": "We're under way — ESP vs GER.",
+          "seq": 0
+        },
+        {
+          "minute": 15,
+          "text": "End of Q1: ESP 0-0 GER.",
+          "seq": 1
+        },
+        {
+          "minute": 26,
+          "team": "GER",
+          "text": "GOAL! Justus Weigand (GER) scores from a field goal — ESP 0-1 GER.",
+          "seq": 2
+        },
+        {
+          "minute": 30,
+          "team": "ESP",
+          "text": "GOAL! José Basterra (ESP) scores from a penalty stroke — ESP 1-1 GER.",
+          "seq": 3
+        },
+        {
+          "minute": 30,
+          "text": "Half-time: ESP 1-1 GER.",
+          "seq": 4
+        },
+        {
+          "minute": 45,
+          "text": "End of Q3: ESP 1-1 GER.",
+          "seq": 5
+        },
+        {
+          "minute": 50,
+          "team": "ESP",
+          "text": "GOAL! José Basterra (ESP) scores from a field goal — ESP 2-1 GER.",
+          "seq": 6
+        },
+        {
+          "minute": 60,
+          "text": "Full-time: ESP 2-1 GER.",
+          "seq": 7
+        }
+      ],
+      "enrichment": "official",
+      "events_rev": 2
     }
   ]
 }
