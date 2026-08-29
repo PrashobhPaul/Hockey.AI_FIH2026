@@ -1,6 +1,6 @@
 {
   "source": "oracle-v1",
-  "updated_at": "2026-08-28T19:42:42.521050+00:00",
+  "updated_at": "2026-08-29T01:19:33.011461+00:00",
   "predictions": [
     {
       "id": "oracle-v1:D1",
@@ -822,7 +822,10 @@
       "publishedAt": "2026-08-18T01:21:34.656168+00:00",
       "reason_original": "FIH #3 NED favoured over #7 ARG — points-based Elo with a full draw model. Revised before push-back; the original pick stays in the ledger.",
       "reason_revised_at": "2026-08-21T07:10:02.651433+00:00",
-      "reason_revision": "rationale rewritten from pre-match tournament evidence; pick and probabilities unchanged"
+      "reason_revision": "rationale rewritten from pre-match tournament evidence; pick and probabilities unchanged",
+      "superseded": true,
+      "superseded_at": "2026-08-29T01:19:33.011024+00:00",
+      "superseded_reason": "Inputs refreshed pre-match: current FIH ranking points and the calibrated draw-aware model."
     },
     {
       "id": "oracle-v1:C3:r4",
@@ -2081,7 +2084,10 @@
       "publishedAt": "2026-08-21T07:45:36.795747+00:00",
       "reason_original": "FIH #5 GER favoured over #6 ESP — points-based Elo with a full draw model. Revised before push-back; the original pick stays in the ledger.",
       "reason_revised_at": "2026-08-21T18:20:27.376404+00:00",
-      "reason_revision": "rationale rewritten from pre-match tournament evidence; pick and probabilities unchanged"
+      "reason_revision": "rationale rewritten from pre-match tournament evidence; pick and probabilities unchanged",
+      "superseded": true,
+      "superseded_at": "2026-08-29T01:19:33.011024+00:00",
+      "superseded_reason": "Inputs refreshed pre-match: current FIH ranking points and the calibrated draw-aware model."
     },
     {
       "id": "oracle-v1:S2E4:r3",
@@ -3276,6 +3282,66 @@
       "pick_confidence": 0.58,
       "reason": "FIH #4 GER favoured over #5 ARG — points-based Elo with a full draw model. Revised pre-match; the original pick stays in the ledger.",
       "publishedAt": "2026-08-27T13:14:57.712898+00:00"
+    },
+    {
+      "id": "oracle-v1:A3:r5",
+      "matchId": "A3",
+      "source": "oracle-v1",
+      "basis": "pre-match",
+      "revises": "oracle-v1:A3:r4",
+      "p_home_win": 0.133,
+      "p_draw": 0.176,
+      "p_away_win": 0.691,
+      "pick": "AWAY",
+      "pick_confidence": 0.691,
+      "reason": "The Netherlands have scored five and conceded one, and did their scoring in an eighteen-minute burst after falling behind, which is the profile of a side that does not panic. Argentina's clean sheet against Japan is the counter-evidence and a good one — they conceded nothing and controlled the middle quarters — but they created only from open play and won five corners without scoring from any.",
+      "publishedAt": "2026-08-29T01:19:33.011024+00:00",
+      "reason_original": "FIH #3 NED favoured over #7 ARG — points-based Elo with a full draw model. Revised before push-back; the original pick stays in the ledger.",
+      "reason_revised_at": "2026-08-21T07:10:02.651433+00:00",
+      "reason_revision": "rationale rewritten from pre-match tournament evidence; pick and probabilities unchanged"
+    },
+    {
+      "id": "oracle-v1:S2F2:r6",
+      "matchId": "S2F2",
+      "source": "oracle-v1",
+      "basis": "pre-match",
+      "revises": "oracle-v1:S2F2:r5",
+      "p_home_win": 0.359,
+      "p_draw": 0.382,
+      "p_away_win": 0.259,
+      "pick": "DRAW",
+      "pick_confidence": 0.382,
+      "reason": "Germany came through Pool B unbeaten with seven scored and only two conceded in three matches, the win over Belgium built on exactly the kind of defending this fixture rewards. Spain won twice by 3-1 in Pool C either side of a single-goal loss to Australia, so both arrive in form — but Spain's chances have come at a goal-a-game cost, and in a match likely to be tight and low-scoring, the side that has defended better all tournament is favoured.",
+      "publishedAt": "2026-08-29T01:19:33.011024+00:00",
+      "reason_original": "FIH #5 GER favoured over #6 ESP — points-based Elo with a full draw model. Revised before push-back; the original pick stays in the ledger.",
+      "reason_revised_at": "2026-08-21T18:20:27.376404+00:00",
+      "reason_revision": "rationale rewritten from pre-match tournament evidence; pick and probabilities unchanged"
+    },
+    {
+      "id": "oracle-v1:BRZ",
+      "matchId": "BRZ",
+      "source": "oracle-v1",
+      "basis": "pre-match",
+      "p_home_win": 0.838,
+      "p_draw": 0.0,
+      "p_away_win": 0.162,
+      "pick": "HOME",
+      "pick_confidence": 0.838,
+      "reason": "FIH #3 NED favoured over #7 ARG — Elo model from world rankings. Bronze Final slot decided by pool standings. Published pre-match.",
+      "publishedAt": "2026-08-29T01:19:33.011024+00:00"
+    },
+    {
+      "id": "oracle-v1:GOLD",
+      "matchId": "GOLD",
+      "source": "oracle-v1",
+      "basis": "pre-match",
+      "p_home_win": 0.419,
+      "p_draw": 0.0,
+      "p_away_win": 0.581,
+      "pick": "AWAY",
+      "pick_confidence": 0.581,
+      "reason": "FIH #2 GER favoured over #5 ESP — Elo model from world rankings. Gold Final slot decided by pool standings. Published pre-match.",
+      "publishedAt": "2026-08-29T01:19:33.011024+00:00"
     }
   ]
 }
