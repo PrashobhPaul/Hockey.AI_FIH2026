@@ -1,9 +1,9 @@
 {
   "matches": 47,
-  "correct": 31,
-  "accuracy_pct": 66,
-  "brier": 0.4401,
-  "log_loss": 0.7598,
+  "correct": 32,
+  "accuracy_pct": 68,
+  "brier": 0.4535,
+  "log_loss": 0.7745,
   "method": "as-of-then replay: every completed match re-scored with only the form and rankings available before its own push-back",
   "replay": [
     {
@@ -45,13 +45,13 @@
     {
       "id": "A2",
       "pick": "HOME",
-      "conf_pct": 90,
+      "conf_pct": 83,
       "correct": true
     },
     {
       "id": "A1",
       "pick": "HOME",
-      "conf_pct": 94,
+      "conf_pct": 95,
       "correct": true
     },
     {
@@ -86,9 +86,9 @@
     },
     {
       "id": "C3",
-      "pick": "DRAW",
+      "pick": "HOME",
       "conf_pct": 39,
-      "correct": false
+      "correct": true
     },
     {
       "id": "C4",
@@ -99,7 +99,7 @@
     {
       "id": "BRZ",
       "pick": "HOME",
-      "conf_pct": 68,
+      "conf_pct": 39,
       "correct": true
     },
     {
@@ -135,13 +135,13 @@
     {
       "id": "A6",
       "pick": "HOME",
-      "conf_pct": 79,
+      "conf_pct": 88,
       "correct": true
     },
     {
       "id": "C6",
       "pick": "HOME",
-      "conf_pct": 94,
+      "conf_pct": 93,
       "correct": true
     },
     {
@@ -165,7 +165,7 @@
     {
       "id": "GOLD",
       "pick": "AWAY",
-      "conf_pct": 39,
+      "conf_pct": 62,
       "correct": false
     },
     {
@@ -189,7 +189,7 @@
     {
       "id": "S2E1",
       "pick": "HOME",
-      "conf_pct": 93,
+      "conf_pct": 91,
       "correct": true
     },
     {
@@ -213,13 +213,13 @@
     {
       "id": "S2F3",
       "pick": "DRAW",
-      "conf_pct": 39,
+      "conf_pct": 38,
       "correct": false
     },
     {
       "id": "S2F4",
       "pick": "AWAY",
-      "conf_pct": 56,
+      "conf_pct": 66,
       "correct": false
     },
     {
@@ -237,13 +237,13 @@
     {
       "id": "S2E3",
       "pick": "HOME",
-      "conf_pct": 79,
+      "conf_pct": 88,
       "correct": true
     },
     {
       "id": "S2E4",
       "pick": "HOME",
-      "conf_pct": 73,
+      "conf_pct": 60,
       "correct": false
     },
     {
@@ -267,27 +267,27 @@
     {
       "id": "SF1",
       "pick": "HOME",
-      "conf_pct": 61,
+      "conf_pct": 58,
       "correct": false
     },
     {
       "id": "SF2",
       "pick": "HOME",
-      "conf_pct": 60,
+      "conf_pct": 57,
       "correct": true
     },
     {
       "id": "A3",
       "pick": "AWAY",
-      "conf_pct": 69,
+      "conf_pct": 40,
       "correct": true
     },
     {
       "id": "S2F2",
-      "pick": "DRAW",
-      "conf_pct": 38,
+      "pick": "HOME",
+      "conf_pct": 58,
       "correct": false
     }
   ],
-  "updated_at": "2026-08-29T02:33:07.017333+00:00"
+  "updated_at": "2026-08-31T01:04:30.684166+00:00"
 }
